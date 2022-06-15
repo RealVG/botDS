@@ -26,6 +26,6 @@ client.on("messageCreate",(message) =>{
    }
 
    if(message.content == "!debb"){
-        message.channel.send("@! debb#6969 contattala che è una puttana")
+        message.channel.send("sise ama debb ma sise non glielo vuole dire, perciò mandi nudes?")
    }
 })
