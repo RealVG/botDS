@@ -24,4 +24,8 @@ client.on("messageCreate",(message) =>{
    if(message.content == "chi è gay?"){
         message.channel.send("@blxcksh2dow#8893")
    }
+
+   if(message.content == "!debb"){
+    message.channel.send("@! debb#6969 contattala che è una puttana")
+   }
 })
