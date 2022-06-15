@@ -17,7 +17,7 @@ client.on("messageCreate",(message) =>{
         var embed = new Discord.MessageEmbed()
         .setTitle(`${message.author.username} è coglione`)
         .setDescription("descrizione madonna")
-        .setThumbnail("https://cdn.discordapp.com/attachments/914313562846027807/986606612099764244/IMG_20220615_131736.jpg")
+        .setThumbnail("https://cdn.discordapp.com/attachments/914313562846027807/986686650174275644/unknown.png")
         message.channel.send({embeds:[embed]})
    }
 })
