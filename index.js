@@ -20,4 +20,4 @@ client.on("messageCreate",(message) =>{
         .setThumbnail("https://cdn.discordapp.com/attachments/914313562846027807/986606612099764244/IMG_20220615_131736.jpg")
         message.channel.send({embeds:[embed]})
    }
-})//OTg2NjMzODcwNjUwODAyMjU3.GU2CtJ.weVpAAbpGloK0NzQwx8i59R2r4IWH0n7aPFxVI
+})
