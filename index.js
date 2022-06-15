@@ -20,4 +20,8 @@ client.on("messageCreate",(message) =>{
         .setThumbnail("https://cdn.discordapp.com/attachments/914313562846027807/986686650174275644/unknown.png")
         message.channel.send({embeds:[embed]})
    }
+
+   if(message.content == "chi è gay?"){
+        message.channel.send("@blxcksh2dow#8893")
+   }
 })
