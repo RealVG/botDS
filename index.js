@@ -59,7 +59,7 @@ client.on("messageReactionAdd",async function(messageReaction,user){
                user.send("hai gia un ticket aperto!").catch(()=>{ })
                return
           }
-          server.channel.create(user.username,{
+          server.channels.create(user.username,{
                type:"text"
           }).then(canale =>{
                canale.setTopic(`User ID: ${user.id}`);
