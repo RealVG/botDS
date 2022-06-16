@@ -30,8 +30,5 @@ client.on("messageCreate",(message) =>{
         message.channel.send("sise ama debb ma sise non glielo vuole dire, perciò mandi nudes?")
    }
 
-   if(message.content == "!create "){
-    var msg = message;
-    message.channel.send(msg)
-   }
+   
 }) 
