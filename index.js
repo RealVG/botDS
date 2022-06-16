@@ -9,16 +9,9 @@ client.on("ready",() => {
 })
 
 client.on("messageCreate",(message) =>{
+     //comando base
    if(message.content=="ciao amici"){
         message.channel.send("puttana tua madre")
-   }
-
-   if(message.content == "!embed"){
-        var embed = new Discord.MessageEmbed()
-        .setTitle(`${message.author.username} è coglione`)
-        .setDescription("descrizione madonna")
-        .setThumbnail("https://cdn.discordapp.com/attachments/914313562846027807/986713329663897600/unknown.png")
-        message.channel.send({embeds:[embed]})
    }
 
    if(message.content == "chi è gay?"){
@@ -30,53 +23,43 @@ client.on("messageCreate",(message) =>{
    }
 
    
-}) 
-
-
-//tickets
-
-//messaggio per inizializzare i ticket
-client.on('message', message=>{
-     if(message.content=="!startticket"){
-         message.channel.send('clicca sulla reazione per aprire un ticket')
-         .then(msg=>msg.react('✉️'))
-     }
 })
 
-//sistema ticket
-
-client.on("messageReactionAdd",async function(messageReaction,user){
-
-     if(user.bot) return
-
-     if(messageReaction.message.partial)await messageReaction.message.fetch();
-
-     if(messageReaction._emoji.name == "✉️"){
-          if(messageReaction.message.channel.id =='986894236513349642')
-          messageReaction.users.remove(user);
-          var server = messageReaction.message.channel.guild;
-          if(server.channels.cache.find(canale => canale.topic ==`User ID: ${user.id}`)){
-               user.send("hai gia un ticket aperto!").catch(()=>{ })
-               return
-          }
-          server.channels.create(user.username,{
-               type:"text"
-          }).then(canale =>{
-               canale.setTopic(`User ID: ${user.id}`);
-               canale.setParent("790867818065035284")
-               canale.overwritePermissions([
-                    {
-                         id:server.id,
-                         deny:["VIEW_CHANNEL"]
-                    },
-                    {
-                         id:user.id,
-                         allow:["VIEW_CHANNEL"]
-                    }
-               ])
-               canale.send('ecco il tuo ticket, spiega il tuo problema')
-          })
+client.on("message",(message)=>{
+     //inviare in privato un messaggio tramite il comando !comando
+     if(message.content=="!comando"){
+          message.author.send("hey ciao");
      }
+     //inviare un messaggio privato a uno specifico utente tutte le volte
+     if(message.content=="!comando2"){
+          var utente = client.users.cache.get(/*id dell'utente tra virgolette*/)
+          message.author.send("ciao"+message.author.toString());
+          message.author.send("ciao <@IDUTENTE>"); //PER TAGGARE
+
+          //INVIARE UN FILE TRAMITE IL BOT
+          message.channel.send("descrizione del file",{files:["immagine1.jpg","file2.pdf"]})
+          
+
+          //Creare un embed
+
+          var embed = new Discord.MessageEmbed()//si puo mettere fuori
+          .setColor("#ff0000")
+          .setTitle("titolo")
+          .setURL("sito per il testo precedente")
+          .setDescription("ciao")
+          .addField("titolo","cotenuto","true")//true o false per farlo mettere in linea al field precedente
+          .setThumbnail("immagine url")
+          .setTimestamp();
+
+          //mess casuale
+          var mgss=["ciao","coglione","come stai?","basta"];
+          var random = Math.floor(Math.random()* mgss.length/*lunghezza della variabile mgss */)
+          message.channel.send(mgss[random])
+          
+     }
+     
+
+
 
 
 })
