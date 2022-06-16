@@ -9,7 +9,6 @@ client.on("ready",() => {
 })
 
 client.on("messageCreate",(message) =>{
-    console.log(message);
    if(message.content=="ciao amici"){
         message.channel.send("puttana tua madre")
    }
