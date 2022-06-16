@@ -55,7 +55,7 @@ client.on("messageReactionAdd",async function(messageReaction,user){
           if(messageReaction.message.channel.id =='986894236513349642')
           messageReaction.users.remove(user);
           var server = messageReaction.message.channel.guild;
-          if(server.channel.cache.find(canale => canale.topic ==`User ID: ${user.id}`)){
+          if(server.channels.cache.find(canale => canale.topic ==`User ID: ${user.id}`)){
                user.send("hai gia un ticket aperto!").catch(()=>{ })
                return
           }
