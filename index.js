@@ -57,6 +57,7 @@ client.on("messageReactionAdd",async function(messageReaction,user){
           var server = messageReaction.message.channel.guild;
           if(server.channel.cache.find(canale => canale.topic ==`User ID: ${user.id}`)){
                user.send("hai gia un ticket aperto!").catch(()=>{ })
+               return
           }
           server.channel.create(user.username,{
                type:"text"
