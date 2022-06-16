@@ -32,3 +32,17 @@ client.on("messageCreate",(message) =>{
 
    
 }) 
+
+
+//tickets
+
+
+client.on('message', message=>{
+     if(message.content=="!startticket"){
+         message.channel.send('clicca sulla reazione per aprire un ticket')
+         .then(msg=>msg.react('✉️'))
+     }
+ 
+ 
+ 
+ })
